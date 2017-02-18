@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+    <html>
+
+        <head>
+
+            <title>slider-demo</title>
+
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+            <meta http-equiv="Content-Language" content="zh-CN" />
+
+            <meta id="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport" />
+
+            <meta content="yes" name="apple-mobile-web-app-capable">
+
+            <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+            <meta content="telephone=no" name="format-detection">
+
+            <meta name="keywords" content=""/>
+
+            <meta name="description" content="" />
+
+			<link rel="stylesheet" href="css/ion.rangeSlider.css"/>
+
+            <link rel="stylesheet" href="css/ion.rangeSlider.skinHTML5.css"/>
+
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+
+			<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
+
+        </head>
+
+        <body>
+
+            <div class="index">
+
+				<input id="range_44" />
+
+				<div class="demo-big__extra">
+
+					<pre id="result_44"></pre>
+
+				</div>
+
+            </div>
+
+			<script>
+
+				$(document).ready(function () {
+
+					var $range = $("#range_44"),
+
+						$result = $("#result_44");
+
+
+
+					var track = function (data) {
+
+						delete data.input;
+
+						delete data.slider;
+
+						if (JSON) {
+
+							$result.html(JSON.stringify(data, null, 2));
+
+						} else {
+
+							$result.html(data.toString());
+
+						}
+
+					};
+
+
+
+					$range.ionRangeSlider({
+
+						type: "double",
+
+						min: 0,
+
+						max: 500,
+
+						from: 100,
+
+						to: 300,
+
+						step: 50,
+
+						grid: true,
+
+					
+
+					});
+
+				});
+
+			</script>
+
+        </body>
+
+    </html>
